@@ -1,0 +1,15 @@
+# Uncompressed source videos — only ship the -web.mp4 versions
+videos/dal-dusk.mp4
+videos/mandap-candlelight.mp4
+videos/marigold-petals.mp4
+videos/chinar-leaves.mp4
+
+# Job tracking state
+videos/.jobs.txt
+videos/.chinar-retry.log
+
+# macOS
+.DS_Store
+
+# Scripts are useful in the repo but not needed on GitHub Pages
+# (leaving them in for reproducibility)

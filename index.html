@@ -1,104 +1,225 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>5 Wedding Invitation Mockups · Aditya & Himanshi</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aditya & Himanshi · 5 Mockups for Review</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+  :root {
+    --bg: #1a1a1a;
+    --panel: #262626;
+    --panel-2: #2f2f2f;
+    --ink: #F5EBDC;
+    --ink-dim: rgba(245,235,220,0.7);
+    --gold: #D4A24C;
+    --border: rgba(212,162,76,0.2);
+  }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { background: #F5F3EE; color: #1A1A1A; font-family: 'Inter', sans-serif; padding: 64px 32px; line-height: 1.6; font-weight: 300; }
-  .wrap { max-width: 1200px; margin: 0 auto; }
-  h1 { font-family: 'Fraunces', serif; font-weight: 400; font-size: 48px; letter-spacing: -0.02em; margin-bottom: 12px; }
-  h1 em { font-style: italic; color: #C9753A; }
-  .lede { font-family: 'Fraunces', serif; font-style: italic; font-size: 20px; color: #555; margin-bottom: 48px; max-width: 640px; }
+  html, body { background: var(--bg); color: var(--ink); font-family: 'Inter', system-ui, sans-serif; line-height: 1.65; -webkit-font-smoothing: antialiased; }
+  body { font-size: 16px; padding: 0 0 80px; }
 
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px; }
-  .card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 24px rgba(0,0,0,0.06); transition: transform 0.3s ease, box-shadow 0.3s ease; text-decoration: none; color: inherit; display: block; }
-  .card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.12); }
+  .header {
+    text-align: center; padding: 72px 24px 48px;
+    border-bottom: 1px solid var(--border);
+  }
+  .header-eyebrow {
+    font-family: 'Playfair Display', serif; font-style: italic;
+    font-size: 14px; color: var(--gold); letter-spacing: 0.2em;
+    text-transform: uppercase; margin-bottom: 16px;
+  }
+  .header h1 {
+    font-family: 'Playfair Display', serif; font-weight: 500;
+    font-size: clamp(34px, 6vw, 48px); line-height: 1.1; margin-bottom: 14px;
+    letter-spacing: -0.005em;
+  }
+  .header p {
+    max-width: 540px; margin: 0 auto; color: var(--ink-dim);
+    font-size: 16px;
+  }
+  .header .dates {
+    margin-top: 24px; color: var(--gold);
+    font-size: 13px; letter-spacing: 0.24em; text-transform: uppercase; font-weight: 500;
+  }
 
-  .card iframe { width: 100%; height: 400px; border: none; pointer-events: none; transform: scale(0.55); transform-origin: 0 0; width: 181.8%; height: 727px; }
-  .frame-wrap { height: 400px; overflow: hidden; background: white; position: relative; }
+  .grid {
+    display: grid; gap: 24px;
+    grid-template-columns: 1fr;
+    max-width: 1200px; margin: 48px auto 0; padding: 0 24px;
+  }
+  @media (min-width: 640px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 980px) { .grid { grid-template-columns: repeat(3, 1fr); gap: 28px; } }
 
-  .card-body { padding: 24px 28px; }
-  .card-num { font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: 0.3em; color: #C9753A; text-transform: uppercase; margin-bottom: 6px; font-weight: 500; }
-  .card-name { font-family: 'Fraunces', serif; font-size: 28px; font-weight: 500; margin-bottom: 4px; letter-spacing: -0.01em; }
-  .card-sub { font-family: 'Fraunces', serif; font-style: italic; color: #888; font-size: 15px; margin-bottom: 12px; }
-  .card-desc { font-size: 14px; color: #555; line-height: 1.55; }
-  .card-cta { margin-top: 16px; font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: 0.2em; color: #1A1A1A; text-transform: uppercase; font-weight: 500; display: flex; align-items: center; gap: 8px; }
+  .card {
+    display: block; background: var(--panel); border-radius: 14px;
+    overflow: hidden; text-decoration: none; color: inherit;
+    border: 1px solid var(--border);
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    position: relative;
+  }
+  .card:hover { transform: translateY(-4px); border-color: var(--gold); box-shadow: 0 20px 60px rgba(0,0,0,0.4); }
+  .card-media {
+    position: relative; aspect-ratio: 4/5; overflow: hidden; background: #000;
+  }
+  .card-media video, .card-media img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+  }
+  .card-media::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.7) 100%);
+    pointer-events: none;
+  }
+  .card-badge {
+    position: absolute; top: 14px; left: 14px; z-index: 2;
+    padding: 6px 12px; border-radius: 999px;
+    background: rgba(0,0,0,0.55); backdrop-filter: blur(8px);
+    font-family: 'Playfair Display', serif; font-style: italic;
+    font-size: 13px; color: var(--gold); letter-spacing: 0.08em;
+    border: 1px solid var(--gold);
+  }
+  .card-body { padding: 24px 22px 26px; }
+  .card-number {
+    font-family: 'Inter', sans-serif; font-size: 11px; letter-spacing: 0.3em;
+    color: var(--ink-dim); margin-bottom: 8px; text-transform: uppercase; font-weight: 500;
+  }
+  .card-title {
+    font-family: 'Playfair Display', serif; font-weight: 500;
+    font-size: 24px; margin-bottom: 8px; color: var(--ink);
+    letter-spacing: -0.005em;
+  }
+  .card-vibe {
+    font-family: 'Playfair Display', serif; font-style: italic;
+    font-size: 15px; color: var(--gold); margin-bottom: 12px;
+  }
+  .card-desc {
+    color: var(--ink-dim); font-size: 14px; line-height: 1.6;
+  }
+  .card-meta {
+    margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border);
+    display: flex; gap: 14px; font-size: 11px; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--ink-dim); font-weight: 500;
+  }
+  .card-meta span { display: inline-flex; align-items: center; gap: 5px; }
+  .card-meta .dot { color: var(--gold); }
 
-  .hint { margin-top: 56px; padding: 24px 28px; background: #EFE8D8; border-radius: 8px; font-size: 14px; color: #555; }
-  .hint strong { color: #1A1A1A; font-weight: 500; }
+  .notes {
+    max-width: 700px; margin: 72px auto 0; padding: 0 24px;
+    text-align: center; color: var(--ink-dim); font-size: 14px;
+  }
+  .notes strong { color: var(--gold); font-weight: 600; }
+  .notes p { margin-bottom: 12px; }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <h1>Five <em>directions</em> for Aditya &amp; Himanshi</h1>
-  <p class="lede">Each design is philosophically distinct — different typography, different colour logic, different emotional tone. Open any one to see the full invitation. Pick the one that feels most like your family.</p>
 
-  <div class="grid">
+<header class="header">
+  <div class="header-eyebrow">Mini-Invitation · 5 Mockups for Family Review</div>
+  <h1>Aditya &amp; Himanshi</h1>
+  <p>Tap any mockup to open it full-screen. Designed for mobile — view on a phone for the real experience.</p>
+  <div class="dates">November 2026 &nbsp;·&nbsp; Delhi &nbsp;·&nbsp; Jammu</div>
+</header>
 
-    <a class="card" href="01-chinar.html" target="_blank">
-      <div class="frame-wrap"><iframe src="01-chinar.html"></iframe></div>
-      <div class="card-body">
-        <div class="card-num">01 · Heritage &amp; Warm</div>
-        <div class="card-name">Chinar</div>
-        <div class="card-sub">Saffron, crimson, gold · Cormorant serif</div>
-        <div class="card-desc">Classic Kashmiri Pandit invitation feel. Chinar leaf motifs, Devanagari "Shree Ganeshaya Namah", Sanskrit-era formality. For elders and traditionalists.</div>
-        <div class="card-cta">View full mockup →</div>
+<div class="grid">
+  <a class="card" href="01-dal.html">
+    <div class="card-media">
+      <div class="card-badge">Cinematic</div>
+      <video autoplay muted loop playsinline preload="metadata" poster="images/dal-hero-still.jpg">
+        <source src="videos/dal-dusk-web.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="card-body">
+      <div class="card-number">Variant 01</div>
+      <div class="card-title">Dal</div>
+      <div class="card-vibe">Dal Lake at dusk</div>
+      <p class="card-desc">Film-poster cinematic. Deep indigo and midnight blue, luminous gold shimmer on the names. Video hero of shikara boats drifting on still water.</p>
+      <div class="card-meta">
+        <span><span class="dot">●</span> Video hero</span>
+        <span><span class="dot">●</span> Dark palette</span>
       </div>
-    </a>
+    </div>
+  </a>
 
-    <a class="card" href="02-shaam.html" target="_blank">
-      <div class="frame-wrap"><iframe src="02-shaam.html"></iframe></div>
-      <div class="card-body">
-        <div class="card-num">02 · Editorial &amp; Muted</div>
-        <div class="card-name">Shaam</div>
-        <div class="card-sub">Oyster beige, rose, soft pastels · Fraunces serif</div>
-        <div class="card-desc">2026 Pinterest "quiet luxury" trend. Emotional minimalism, blush pastels, romantic serif. Contemporary and calm. For cousins and the modern family.</div>
-        <div class="card-cta">View full mockup →</div>
+  <a class="card" href="02-kesar.html">
+    <div class="card-media">
+      <div class="card-badge">Luxurious</div>
+      <video autoplay muted loop playsinline preload="metadata" poster="images/kesar-hero.jpg">
+        <source src="videos/marigold-petals-web.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="card-body">
+      <div class="card-number">Variant 02</div>
+      <div class="card-title">Kesar</div>
+      <div class="card-vibe">Saffron warmth</div>
+      <p class="card-desc">Golden hour opulence. Warm cream, saffron, crimson accent, Cormorant Garamond names with gold shimmer. Falling petals. Video of marigold petals drifting onto silk.</p>
+      <div class="card-meta">
+        <span><span class="dot">●</span> Video hero</span>
+        <span><span class="dot">●</span> Light palette</span>
       </div>
-    </a>
+    </div>
+  </a>
 
-    <a class="card" href="03-dal.html" target="_blank">
-      <div class="frame-wrap"><iframe src="03-dal.html"></iframe></div>
-      <div class="card-body">
-        <div class="card-num">03 · Cinematic &amp; Dark</div>
-        <div class="card-name">Dal</div>
-        <div class="card-sub">Midnight blue, gold, atmospheric · Playfair serif</div>
-        <div class="card-desc">Dal Lake at dusk. Dramatic, filmic, mountain silhouettes, twinkling stars, gold type on midnight. Memorable and striking. For a visually bold statement.</div>
-        <div class="card-cta">View full mockup →</div>
+  <a class="card" href="03-chinar.html">
+    <div class="card-media">
+      <div class="card-badge">Heritage</div>
+      <video autoplay muted loop playsinline preload="metadata" poster="images/chinar-hero.jpg">
+        <source src="videos/chinar-leaves-web.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="card-body">
+      <div class="card-number">Variant 03</div>
+      <div class="card-title">Chinar</div>
+      <div class="card-vibe">A Kashmiri autumn</div>
+      <p class="card-desc">Kashmiri heritage. Devanagari श्री गणेशाय नमः eyebrow, EB Garamond names, chinar-orange and deep forest-green palette. Falling chinar leaves. Video of autumn leaves drifting.</p>
+      <div class="card-meta">
+        <span><span class="dot">●</span> Video hero</span>
+        <span><span class="dot">●</span> Light palette</span>
       </div>
-    </a>
+    </div>
+  </a>
 
-    <a class="card" href="04-nakshi.html" target="_blank">
-      <div class="frame-wrap"><iframe src="04-nakshi.html"></iframe></div>
-      <div class="card-body">
-        <div class="card-num">04 · Art Deco &amp; Geometric</div>
-        <div class="card-name">Nakshi</div>
-        <div class="card-sub">Emerald, gold, ivory · Marcellus serif</div>
-        <div class="card-desc">Modern-meets-heritage. Framed panels, geometric ornaments, laser-cut invitation feel. Structured and polished. For a designed, wedding-planner aesthetic.</div>
-        <div class="card-cta">View full mockup →</div>
+  <a class="card" href="04-shaam.html">
+    <div class="card-media">
+      <div class="card-badge">Editorial</div>
+      <img src="images/shaam-hero.jpg" alt="">
+    </div>
+    <div class="card-body">
+      <div class="card-number">Variant 04</div>
+      <div class="card-title">Shaam</div>
+      <div class="card-vibe">A quiet joy</div>
+      <p class="card-desc">Soft editorial modern. Pinterest quiet-luxury — blush, dusty rose, sage, oyster. Fraunces with optical sizing, breathing hero image, drifting particles. Deliberately calm.</p>
+      <div class="card-meta">
+        <span><span class="dot">●</span> Still hero</span>
+        <span><span class="dot">●</span> Soft palette</span>
       </div>
-    </a>
+    </div>
+  </a>
 
-    <a class="card" href="05-himalaya.html" target="_blank">
-      <div class="frame-wrap"><iframe src="05-himalaya.html"></iframe></div>
-      <div class="card-body">
-        <div class="card-num">05 · Minimal &amp; Serene</div>
-        <div class="card-name">Himalaya</div>
-        <div class="card-sub">Paper, saffron accent, ink · EB Garamond serif</div>
-        <div class="card-desc">Ultra-minimal editorial. Huge serif on paper, left-aligned, mountain line illustration, generous whitespace. For a very modern, Gen Z-friendly feel.</div>
-        <div class="card-cta">View full mockup →</div>
+  <a class="card" href="05-mahal.html">
+    <div class="card-media">
+      <div class="card-badge">Opulent</div>
+      <video autoplay muted loop playsinline preload="metadata" poster="images/mahal-hero.jpg">
+        <source src="videos/mandap-candlelight-web.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="card-body">
+      <div class="card-number">Variant 05</div>
+      <div class="card-title">Mahal</div>
+      <div class="card-vibe">A royal welcome</div>
+      <p class="card-desc">Opulent palace · art deco. Deep emerald and gold on ivory, A·H monogram crest, deco-framed hero and RSVP panel, Marcellus typography. Video of mandap candlelight.</p>
+      <div class="card-meta">
+        <span><span class="dot">●</span> Video hero</span>
+        <span><span class="dot">●</span> Dark palette</span>
       </div>
-    </a>
-
-  </div>
-
-  <div class="hint">
-    <strong>How to choose:</strong> Open each one on your phone (that's where 95% of guests will see it). Show them to your mum and your dad — they'll have strong instincts about which one feels like "us". You don't need to pick a favourite alone, and we can remix pieces from different ones.
-  </div>
+    </div>
+  </a>
 </div>
+
+<div class="notes">
+  <p><strong>For best viewing:</strong> open each mockup on your phone — the designs are mobile-first, and the video heroes autoplay silently.</p>
+  <p>All five share the same content, same RSVP, same family note. They differ in aesthetic philosophy — pick the one that feels most like the celebration you want to share.</p>
+</div>
+
 </body>
 </html>
