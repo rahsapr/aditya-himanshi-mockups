@@ -22,7 +22,7 @@
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body { background: var(--cream); color: var(--ink); font-family: 'Lato', system-ui, sans-serif; line-height: 1.7; overflow-x: hidden; }
-  body { font-size: 18px; -webkit-font-smoothing: antialiased; }
+  body { font-size: 19px; -webkit-font-smoothing: antialiased; }
 
   body::before {
     content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 0;
@@ -308,6 +308,19 @@
     *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
     .leaf { display: none; }
   }
+
+  /* Readability pass — heavier strokes for older eyes on phones */
+  body { font-size: 19px; }
+  p, .event-name, .event-time, .event-date-day, .event-date-mo, .city-sublabel,
+  .section-eyebrow, .footer-tag, .hero-tagline, .hero-dates, .welcome-body,
+  .welcome-sign, .welcome-sign span, .rsvp-body, .rsvp-body em, .btn,
+  .rsvp-bar a, .blessing, .scroll-hint { font-weight: 500; }
+  .rsvp-body { color: rgba(42,31,20,0.88); }
+  .names, .section-title, .city-label, .footer-names { font-weight: 600; letter-spacing: -0.005em; }
+  .event-name { font-weight: 600; }
+  .event-date-day { font-weight: 600; }
+  .btn, .rsvp-bar .primary, .rsvp-bar .call { font-weight: 700; letter-spacing: 0.04em; }
+  .city-sublabel, .section-eyebrow, .footer-tag, .hero-dates { font-weight: 600; letter-spacing: 0.2em; }
 </style>
 </head>
 <body>

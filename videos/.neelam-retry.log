@@ -1,0 +1,3 @@
+[attempt 1] 
+An error occurred (ServiceUnavailableException) when calling the StartAsyncInvoke operation (reached max retries: 2): Bedrock is unable to process your request.
+[attempt 2] arn:aws:bedrock:us-east-1:623297416416:async-invoke/4rzl7k3yumxb
