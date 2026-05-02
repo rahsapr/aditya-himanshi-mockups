@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Aditya & Himanshi · November 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #FAFAF7;
+    --paper-warm: #F3F1EA;
+    --saffron: #DB8B2B;
+    --saffron-soft: #F5D9B7;
+    --ink: #1A1A1A;
+    --ink-soft: #5A5A5A;
+    --ink-whisper: #9A9A9A;
+    --line: #E4E2DC;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--paper); color: var(--ink); font-family: 'Inter', -apple-system, sans-serif; font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased; font-weight: 300; }
+
+  .page { max-width: 720px; margin: 0 auto; padding: 0 32px; }
+
+  /* ============== HERO ============== */
+  .hero {
+    position: relative; min-height: 85vh; display: flex; flex-direction: column;
+    align-items: flex-start; justify-content: center;
+    padding: 120px 0 80px; text-align: left;
+  }
+
+  .blessing {
+    font-family: 'Inter', sans-serif; font-size: 11px;
+    letter-spacing: 0.3em; color: var(--ink-soft);
+    text-transform: uppercase; margin-bottom: 40px; font-weight: 400;
+  }
+  .blessing::before {
+    content: ''; display: inline-block; width: 24px; height: 1px;
+    background: var(--saffron); vertical-align: middle; margin-right: 12px;
+  }
+
+  .couple {
+    font-family: 'EB Garamond', serif; font-weight: 400;
+    font-size: 120px; line-height: 0.95; color: var(--ink);
+    letter-spacing: -0.04em;
+  }
+  .couple-and {
+    font-family: 'EB Garamond', serif; font-style: italic; font-weight: 400;
+    font-size: 72px; color: var(--saffron); margin: 8px 0;
+    display: inline-block;
+  }
+
+  .hero-meta { margin-top: 56px; display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+  .hero-meta .tag {
+    font-family: 'Inter', sans-serif; font-size: 12px;
+    letter-spacing: 0.25em; color: var(--ink-soft);
+    text-transform: uppercase; font-weight: 400;
+  }
+  .hero-meta .dot { width: 4px; height: 4px; background: var(--saffron); border-radius: 50%; }
+  .hero-date {
+    font-family: 'EB Garamond', serif; font-style: italic;
+    font-size: 22px; color: var(--ink); margin-top: 14px;
+  }
+
+  /* minimal mountain line */
+  .mountain-line { margin-top: 72px; width: 200px; opacity: 0.6; }
+
+  /* ============== SECTION ============== */
+  .section { padding: 96px 0; border-top: 1px solid var(--line); position: relative; }
+  .section.no-border { border-top: none; }
+
+  .section-meta {
+    display: grid; grid-template-columns: 120px 1fr; gap: 32px;
+    align-items: start;
+  }
+
+  .eyebrow {
+    font-family: 'Inter', sans-serif; font-size: 11px;
+    letter-spacing: 0.25em; color: var(--saffron);
+    text-transform: uppercase; font-weight: 400;
+  }
+
+  .section h2 {
+    font-family: 'EB Garamond', serif; font-weight: 400; font-size: 56px;
+    color: var(--ink); letter-spacing: -0.025em; line-height: 1.05;
+    margin-bottom: 24px;
+  }
+
+  /* ============== NOTE ============== */
+  .note {
+    font-family: 'EB Garamond', serif; font-size: 22px; line-height: 1.65;
+    color: var(--ink); font-weight: 400; max-width: 580px;
+  }
+  .signoff {
+    margin-top: 32px; font-family: 'Inter', sans-serif; font-size: 13px;
+    letter-spacing: 0.05em; color: var(--ink-soft); font-weight: 400;
+  }
+  .signoff-name { color: var(--ink); font-weight: 500; }
+
+  /* ============== PROGRAMME ============== */
+  .programme { display: flex; flex-direction: column; gap: 48px; }
+
+  .city-group { }
+  .city-label {
+    font-family: 'Inter', sans-serif; font-size: 11px;
+    letter-spacing: 0.3em; color: var(--saffron);
+    text-transform: uppercase; margin-bottom: 20px; font-weight: 500;
+  }
+
+  .event {
+    display: grid; grid-template-columns: 100px 1fr auto;
+    gap: 32px; padding: 20px 0; align-items: baseline;
+    border-top: 1px solid var(--line);
+  }
+  .event:last-child { border-bottom: 1px solid var(--line); }
+
+  .event-date {
+    font-family: 'EB Garamond', serif; font-size: 18px;
+    color: var(--ink-soft); font-weight: 400; line-height: 1;
+  }
+  .event-name {
+    font-family: 'EB Garamond', serif; font-size: 28px;
+    color: var(--ink); font-weight: 400; letter-spacing: -0.01em;
+    line-height: 1.2;
+  }
+  .event-meta {
+    font-family: 'Inter', sans-serif; font-size: 11px;
+    letter-spacing: 0.2em; color: var(--ink-whisper);
+    text-transform: uppercase; font-weight: 400;
+  }
+
+  /* ============== RSVP ============== */
+  .rsvp { padding: 96px 0; border-top: 1px solid var(--line); }
+  .rsvp-content { max-width: 560px; }
+
+  .rsvp-text {
+    font-family: 'EB Garamond', serif; font-size: 22px;
+    color: var(--ink); margin-top: 20px; max-width: 520px;
+    font-style: italic; font-weight: 400;
+  }
+
+  .cta-stack { display: flex; gap: 12px; margin-top: 48px; flex-wrap: wrap; }
+  .cta {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 18px 32px; font-family: 'Inter', sans-serif;
+    font-size: 13px; letter-spacing: 0.15em; text-transform: uppercase;
+    text-decoration: none; font-weight: 500;
+    transition: all 0.25s ease; border-radius: 0;
+  }
+  .cta-primary {
+    background: var(--ink); color: var(--paper);
+    border: 1px solid var(--ink);
+  }
+  .cta-primary:hover { background: var(--saffron); border-color: var(--saffron); }
+  .cta-secondary {
+    background: transparent; color: var(--ink);
+    border: 1px solid var(--ink);
+  }
+  .cta-secondary:hover { background: var(--ink); color: var(--paper); }
+  .cta-icon { width: 14px; height: 14px; }
+
+  /* ============== FOOTER ============== */
+  .footer {
+    border-top: 1px solid var(--line);
+    padding: 64px 0 48px; text-align: left;
+    display: grid; grid-template-columns: 120px 1fr;
+    gap: 32px; align-items: center;
+  }
+  .footer-left {
+    font-family: 'Inter', sans-serif; font-size: 11px;
+    letter-spacing: 0.3em; color: var(--ink-whisper);
+    text-transform: uppercase; font-weight: 400;
+  }
+  .footer-right {
+    font-family: 'EB Garamond', serif; font-size: 16px;
+    color: var(--ink-soft); font-style: italic;
+  }
+
+  @media (max-width: 640px) {
+    .page { padding: 0 24px; }
+    .hero { min-height: 70vh; padding: 80px 0 64px; }
+    .couple { font-size: 72px; }
+    .couple-and { font-size: 48px; }
+    .section { padding: 72px 0; }
+    .section h2 { font-size: 40px; }
+    .section-meta { grid-template-columns: 1fr; gap: 16px; }
+    .event { grid-template-columns: 60px 1fr; gap: 16px; }
+    .event-meta { grid-column: 2; margin-top: 4px; }
+    .event-name { font-size: 22px; }
+    .rsvp { padding: 72px 0; }
+    .cta-stack { flex-direction: column; align-items: stretch; }
+    .cta { justify-content: center; }
+    .footer { grid-template-columns: 1fr; gap: 12px; padding: 48px 0 32px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <section class="hero">
+    <div class="blessing">With Amma's blessings — Rani Sapru</div>
+
+    <h1 class="couple">
+      Aditya,<br>
+      <span class="couple-and">and</span><br>
+      Himanshi.
+    </h1>
+
+    <div class="hero-meta">
+      <span class="tag">Delhi</span>
+      <span class="dot"></span>
+      <span class="tag">Jammu</span>
+      <span class="dot"></span>
+      <span class="tag">November 2026</span>
+    </div>
+    <div class="hero-date">20<sup>th</sup> — 29<sup>th</sup> November, two thousand twenty-six</div>
+
+    <svg class="mountain-line" viewBox="0 0 200 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 35 L30 20 L55 28 L85 8 L115 18 L145 4 L175 14 L200 10" stroke="#DB8B2B" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </section>
+
+  <section class="section">
+    <div class="section-meta">
+      <div class="eyebrow">From all of us</div>
+      <div>
+        <h2>With joy,<br>from our family.</h2>
+        <p class="note">
+          We are delighted to invite you to the wedding of Aditya and look forward to celebrating this joyous occasion together.
+        </p>
+        <div class="signoff">
+          With love, <span class="signoff-name">Anil &amp; Renu Sapru</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-meta">
+      <div class="eyebrow">Programme</div>
+      <div>
+        <h2>Nine days,<br>two cities.</h2>
+
+        <div class="programme" style="margin-top: 56px;">
+
+          <div class="city-group">
+            <div class="city-label">— Delhi</div>
+            <div class="event">
+              <div class="event-date">20 Nov</div>
+              <div class="event-name">Devgun Ceremony</div>
+              <div class="event-meta"></div>
+            </div>
+          </div>
+
+          <div class="city-group">
+            <div class="city-label">— Jammu</div>
+            <div class="event">
+              <div class="event-date">24 Nov</div>
+              <div class="event-name">Arrival</div>
+              <div class="event-meta"></div>
+            </div>
+            <div class="event">
+              <div class="event-date">24 Nov</div>
+              <div class="event-name">Mehndi Raat</div>
+              <div class="event-meta">Evening</div>
+            </div>
+            <div class="event">
+              <div class="event-date">25 Nov</div>
+              <div class="event-name">Barat</div>
+              <div class="event-meta">Morning</div>
+            </div>
+            <div class="event">
+              <div class="event-date">26 Nov</div>
+              <div class="event-name">Lunch</div>
+              <div class="event-meta"></div>
+            </div>
+            <div class="event">
+              <div class="event-date">26 Nov</div>
+              <div class="event-name">Departure for Delhi</div>
+              <div class="event-meta">Evening</div>
+            </div>
+          </div>
+
+          <div class="city-group">
+            <div class="city-label">— Delhi</div>
+            <div class="event">
+              <div class="event-date">29 Nov</div>
+              <div class="event-name">Shishur</div>
+              <div class="event-meta">Lunch</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="rsvp">
+    <div class="section-meta">
+      <div class="eyebrow">Please share</div>
+      <div class="rsvp-content">
+        <h2>Your travel,<br>your blessings.</h2>
+        <p class="rsvp-text">
+          Please share your travel details so we can arrange accommodation comfortably — or give us a call. We'd love to hear from you.
+        </p>
+
+        <div class="cta-stack">
+          <a class="cta cta-primary" href="#rsvp-form">
+            Share travel details
+            <svg class="cta-icon" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+          <a class="cta cta-secondary" href="tel:+919810136111">
+            <svg class="cta-icon" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" stroke="currentColor" stroke-width="1.5"/></svg>
+            Call Anil-ji
+          </a>
+          <a class="cta cta-secondary" href="tel:+919810226037">
+            <svg class="cta-icon" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" stroke="currentColor" stroke-width="1.5"/></svg>
+            Call Renu-ji
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-left">The Sapru family</div>
+    <div class="footer-right">Aditya &amp; Himanshi — 20 to 29 November 2026, Delhi &amp; Jammu</div>
+  </footer>
+
+</div>
+</body>
+</html>

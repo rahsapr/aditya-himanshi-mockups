@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Aditya & Himanshi · November 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Tenor+Sans&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --emerald: #0F4C3A;
+    --emerald-deep: #083325;
+    --emerald-bright: #156B52;
+    --gold: #C9A85C;
+    --gold-bright: #E4C97A;
+    --gold-deep: #997F3E;
+    --ivory: #F8F3E8;
+    --ivory-warm: #F1E8D4;
+    --ink: #1A2620;
+    --muted: #4A5850;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--ivory); color: var(--ink); font-family: 'Poppins', -apple-system, sans-serif; font-size: 16px; line-height: 1.65; -webkit-font-smoothing: antialiased; font-weight: 300; }
+  body { background-color: var(--ivory); min-height: 100vh; }
+
+  .page { max-width: 800px; margin: 0 auto; background: var(--ivory); box-shadow: 0 0 80px rgba(15,76,58,0.1); }
+
+  /* ============== HERO FRAME ============== */
+  .hero {
+    position: relative; padding: 20px; background: var(--ivory);
+  }
+  .hero-frame {
+    position: relative; padding: 72px 40px 88px; text-align: center;
+    border: 1px solid var(--gold); outline: 4px solid var(--ivory);
+    outline-offset: 8px; background: var(--ivory);
+  }
+  .hero-frame::before {
+    content: ''; position: absolute; inset: 12px;
+    border: 1px solid rgba(201, 168, 92, 0.35);
+    pointer-events: none;
+  }
+
+  /* corner art deco ornaments */
+  .corner { position: absolute; width: 50px; height: 50px; }
+  .corner.tl { top: 20px; left: 20px; }
+  .corner.tr { top: 20px; right: 20px; transform: scaleX(-1); }
+  .corner.bl { bottom: 20px; left: 20px; transform: scaleY(-1); }
+  .corner.br { bottom: 20px; right: 20px; transform: scale(-1, -1); }
+
+  .monogram {
+    font-family: 'Marcellus', serif; font-size: 26px; color: var(--emerald);
+    letter-spacing: 0.2em; margin-bottom: 12px; display: inline-block;
+    padding: 8px 20px; position: relative;
+  }
+  .monogram::before, .monogram::after {
+    content: ''; position: absolute; top: 50%; width: 24px; height: 1px;
+    background: var(--gold);
+  }
+  .monogram::before { left: -32px; }
+  .monogram::after { right: -32px; }
+
+  .blessing {
+    font-family: 'Tenor Sans', sans-serif; font-size: 11px;
+    letter-spacing: 0.4em; color: var(--emerald-deep);
+    text-transform: uppercase; margin: 28px 0 48px;
+  }
+
+  .couple {
+    font-family: 'Marcellus', serif;
+    font-weight: 400; font-size: 92px; line-height: 1.05;
+    color: var(--emerald-deep); letter-spacing: -0.005em;
+  }
+  .couple .amp {
+    display: block; font-family: 'Marcellus', serif;
+    font-size: 56px; color: var(--gold-deep); margin: 2px 0;
+  }
+
+  /* art deco line break */
+  .deco-line { display: flex; align-items: center; justify-content: center; gap: 14px; margin: 36px 0; }
+  .deco-line .d-line { width: 80px; height: 1px; background: var(--gold); }
+  .deco-line .d-diamond { width: 10px; height: 10px; background: var(--gold); transform: rotate(45deg); }
+  .deco-line .d-circle { width: 6px; height: 6px; background: var(--emerald); border-radius: 50%; }
+
+  .tagline {
+    font-family: 'Tenor Sans', sans-serif; font-size: 12px;
+    letter-spacing: 0.35em; color: var(--muted);
+    text-transform: uppercase; margin-bottom: 16px;
+  }
+  .date-big {
+    font-family: 'Marcellus', serif; font-size: 24px; color: var(--emerald);
+    letter-spacing: 0.02em;
+  }
+
+  /* ============== SECTION ============== */
+  .section { padding: 72px 48px; position: relative; }
+
+  .section-frame {
+    border: 1px solid rgba(201, 168, 92, 0.4);
+    padding: 48px 40px; position: relative; background: var(--ivory);
+  }
+
+  .eyebrow-tag {
+    display: inline-block; padding: 8px 20px; background: var(--ivory);
+    border: 1px solid var(--gold); font-family: 'Tenor Sans', sans-serif;
+    font-size: 10px; letter-spacing: 0.4em; color: var(--emerald-deep);
+    text-transform: uppercase; position: absolute; top: -14px; left: 50%;
+    transform: translateX(-50%); white-space: nowrap;
+  }
+
+  .section h2 {
+    font-family: 'Marcellus', serif; font-weight: 400; font-size: 42px;
+    color: var(--emerald-deep); text-align: center; margin-bottom: 32px;
+    letter-spacing: -0.005em;
+  }
+
+  /* ============== NOTE ============== */
+  .note {
+    max-width: 540px; margin: 0 auto; text-align: center;
+    font-family: 'Marcellus', serif; font-size: 22px; line-height: 1.65;
+    color: var(--ink); font-weight: 400;
+  }
+  .signoff {
+    margin-top: 36px; text-align: center;
+    font-family: 'Tenor Sans', sans-serif; font-size: 11px;
+    letter-spacing: 0.35em; color: var(--emerald); text-transform: uppercase;
+  }
+  .signoff-names {
+    display: block; font-family: 'Marcellus', serif; font-size: 20px;
+    letter-spacing: 0.02em; color: var(--emerald-deep);
+    text-transform: none; margin-top: 8px;
+  }
+
+  /* ============== PROGRAMME TABLE ============== */
+  .programme-table { margin: 0 auto; max-width: 600px; }
+
+  .city-row {
+    display: grid; grid-template-columns: 120px 1fr 120px;
+    align-items: center; padding: 8px 0; margin: 24px 0 16px;
+  }
+  .city-row .line { height: 1px; background: var(--gold); }
+  .city-row .city-label {
+    font-family: 'Tenor Sans', sans-serif; font-size: 13px;
+    letter-spacing: 0.4em; color: var(--emerald-deep);
+    text-transform: uppercase; text-align: center;
+  }
+
+  .event {
+    display: grid; grid-template-columns: 90px 1fr auto;
+    gap: 24px; align-items: center; padding: 18px 0;
+    border-bottom: 1px dotted rgba(15, 76, 58, 0.2);
+  }
+  .event:last-child { border-bottom: none; }
+
+  .event-cal {
+    text-align: center; padding: 8px; border: 1px solid var(--gold);
+    font-family: 'Marcellus', serif; color: var(--emerald-deep);
+    background: rgba(201, 168, 92, 0.08);
+  }
+  .event-cal .day { font-size: 28px; line-height: 1; display: block; }
+  .event-cal .month {
+    font-family: 'Tenor Sans', sans-serif; font-size: 9px;
+    letter-spacing: 0.25em; color: var(--muted); text-transform: uppercase;
+    display: block; margin-top: 2px;
+  }
+
+  .event-body .name {
+    font-family: 'Marcellus', serif; font-size: 22px; color: var(--emerald-deep);
+    line-height: 1.2;
+  }
+  .event-body .sub {
+    font-family: 'Poppins', sans-serif; font-size: 11px;
+    letter-spacing: 0.2em; color: var(--muted); text-transform: uppercase;
+    margin-top: 4px; font-weight: 400;
+  }
+
+  .event-mark { width: 20px; height: 20px; opacity: 0.7; }
+
+  /* ============== RSVP ============== */
+  .rsvp { background: linear-gradient(180deg, var(--emerald-deep), var(--emerald)); color: var(--ivory); padding: 88px 48px; position: relative; }
+  .rsvp-frame {
+    border: 1px solid var(--gold); padding: 56px 40px; text-align: center;
+    position: relative;
+  }
+  .rsvp .eyebrow-tag {
+    background: var(--emerald-deep); color: var(--gold-bright);
+  }
+  .rsvp h2 { color: var(--ivory); margin-bottom: 20px; }
+  .rsvp-note { max-width: 480px; margin: 0 auto 44px; color: rgba(248,243,232,0.85); font-family: 'Poppins', sans-serif; font-size: 16px; font-weight: 300; }
+
+  .cta-row { display: flex; gap: 16px; max-width: 460px; margin: 0 auto; flex-wrap: wrap; justify-content: center; }
+  .cta {
+    flex: 1 1 200px; display: flex; align-items: center; justify-content: center;
+    gap: 10px; padding: 20px 28px; font-family: 'Tenor Sans', sans-serif;
+    font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase;
+    text-decoration: none; transition: all 0.3s ease; border-radius: 0;
+  }
+  .cta-primary {
+    background: var(--gold); color: var(--emerald-deep);
+  }
+  .cta-primary:hover {
+    background: var(--gold-bright); transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+  }
+  .cta-secondary {
+    background: transparent; color: var(--gold-bright);
+    border: 1px solid var(--gold);
+  }
+  .cta-secondary:hover { background: rgba(201,168,92,0.1); }
+  .cta-icon { width: 14px; height: 14px; }
+
+  /* ============== FOOTER ============== */
+  .footer { text-align: center; padding: 64px 32px 48px; }
+  .footer-deco { width: 48px; height: 48px; margin: 0 auto 20px; opacity: 0.5; }
+  .footer-names {
+    font-family: 'Marcellus', serif; font-size: 18px; color: var(--emerald-deep);
+    margin-bottom: 10px;
+  }
+  .footer-mini {
+    font-family: 'Tenor Sans', sans-serif; font-size: 10px;
+    letter-spacing: 0.35em; color: var(--muted); text-transform: uppercase;
+  }
+
+  @media (max-width: 600px) {
+    .hero-frame { padding: 56px 24px 72px; }
+    .couple { font-size: 60px; }
+    .couple .amp { font-size: 40px; }
+    .section { padding: 56px 20px; }
+    .section-frame { padding: 40px 20px; }
+    .section h2 { font-size: 32px; }
+    .event { grid-template-columns: 70px 1fr; gap: 14px; }
+    .event-cal .day { font-size: 22px; }
+    .event-mark { display: none; }
+    .rsvp { padding: 56px 20px; }
+    .rsvp-frame { padding: 40px 20px; }
+    .cta-row { flex-direction: column; }
+    .city-row { grid-template-columns: 40px 1fr 40px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <section class="hero">
+    <div class="hero-frame">
+      <!-- art deco corners -->
+      <svg class="corner tl" viewBox="0 0 50 50" fill="none">
+        <path d="M0 25 L15 25 L15 15 L25 15 L25 0" stroke="#C9A85C" stroke-width="0.8"/>
+        <path d="M5 30 L20 30 L20 20 L30 20 L30 5" stroke="#C9A85C" stroke-width="0.5"/>
+        <circle cx="25" cy="25" r="2" fill="#0F4C3A"/>
+        <path d="M35 35 L30 30 L35 25 L40 30 Z" stroke="#C9A85C" stroke-width="0.6"/>
+      </svg>
+      <svg class="corner tr" viewBox="0 0 50 50" fill="none">
+        <path d="M0 25 L15 25 L15 15 L25 15 L25 0" stroke="#C9A85C" stroke-width="0.8"/>
+        <path d="M5 30 L20 30 L20 20 L30 20 L30 5" stroke="#C9A85C" stroke-width="0.5"/>
+        <circle cx="25" cy="25" r="2" fill="#0F4C3A"/>
+        <path d="M35 35 L30 30 L35 25 L40 30 Z" stroke="#C9A85C" stroke-width="0.6"/>
+      </svg>
+      <svg class="corner bl" viewBox="0 0 50 50" fill="none">
+        <path d="M0 25 L15 25 L15 15 L25 15 L25 0" stroke="#C9A85C" stroke-width="0.8"/>
+        <path d="M5 30 L20 30 L20 20 L30 20 L30 5" stroke="#C9A85C" stroke-width="0.5"/>
+        <circle cx="25" cy="25" r="2" fill="#0F4C3A"/>
+      </svg>
+      <svg class="corner br" viewBox="0 0 50 50" fill="none">
+        <path d="M0 25 L15 25 L15 15 L25 15 L25 0" stroke="#C9A85C" stroke-width="0.8"/>
+        <path d="M5 30 L20 30 L20 20 L30 20 L30 5" stroke="#C9A85C" stroke-width="0.5"/>
+        <circle cx="25" cy="25" r="2" fill="#0F4C3A"/>
+      </svg>
+
+      <div class="monogram">AH</div>
+      <div class="blessing">With Amma's blessings · Rani Sapru</div>
+
+      <h1 class="couple">
+        Aditya<span class="amp">&amp;</span>Himanshi
+      </h1>
+
+      <div class="deco-line">
+        <div class="d-line"></div>
+        <div class="d-circle"></div>
+        <div class="d-diamond"></div>
+        <div class="d-circle"></div>
+        <div class="d-line"></div>
+      </div>
+
+      <div class="tagline">Invite you to celebrate</div>
+      <div class="date-big">20 — 29 November · 2026</div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-frame">
+      <div class="eyebrow-tag">From all of us</div>
+      <h2>With Joy</h2>
+      <p class="note">
+        We are delighted to invite you to the wedding of Aditya and look forward to celebrating this joyous occasion together.
+      </p>
+      <div class="signoff">
+        With love, from our family
+        <span class="signoff-names">Anil &amp; Renu Sapru</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-frame">
+      <div class="eyebrow-tag">The Programme</div>
+      <h2>Celebrations</h2>
+
+      <div class="programme-table">
+
+        <div class="city-row">
+          <div class="line"></div>
+          <div class="city-label">Delhi</div>
+          <div class="line"></div>
+        </div>
+
+        <div class="event">
+          <div class="event-cal"><span class="day">20</span><span class="month">Nov</span></div>
+          <div class="event-body">
+            <div class="name">Devgun Ceremony</div>
+            <div class="sub">Delhi</div>
+          </div>
+          <svg class="event-mark" viewBox="0 0 20 20" fill="none">
+            <path d="M10 2 L12 8 L18 10 L12 12 L10 18 L8 12 L2 10 L8 8 Z" stroke="#C9A85C" stroke-width="0.8"/>
+          </svg>
+        </div>
+
+        <div class="city-row">
+          <div class="line"></div>
+          <div class="city-label">Jammu</div>
+          <div class="line"></div>
+        </div>
+
+        <div class="event">
+          <div class="event-cal"><span class="day">24</span><span class="month">Nov</span></div>
+          <div class="event-body">
+            <div class="name">Arrival</div>
+            <div class="sub">Guests assemble in Jammu</div>
+          </div>
+          <svg class="event-mark" viewBox="0 0 20 20" fill="none">
+            <circle cx="10" cy="10" r="4" stroke="#C9A85C" stroke-width="0.8"/>
+          </svg>
+        </div>
+        <div class="event">
+          <div class="event-cal"><span class="day">24</span><span class="month">Nov</span></div>
+          <div class="event-body">
+            <div class="name">Mehndi Raat</div>
+            <div class="sub">Evening</div>
+          </div>
+          <svg class="event-mark" viewBox="0 0 20 20" fill="none">
+            <path d="M10 2 L12 8 L18 10 L12 12 L10 18 L8 12 L2 10 L8 8 Z" stroke="#C9A85C" stroke-width="0.8"/>
+          </svg>
+        </div>
+        <div class="event">
+          <div class="event-cal"><span class="day">25</span><span class="month">Nov</span></div>
+          <div class="event-body">
+            <div class="name">Barat</div>
+            <div class="sub">Morning</div>
+          </div>
+          <svg class="event-mark" viewBox="0 0 20 20" fill="none">
+            <path d="M10 2 L12 8 L18 10 L12 12 L10 18 L8 12 L2 10 L8 8 Z" stroke="#C9A85C" stroke-width="0.8"/>
+          </svg>
+        </div>
+        <div class="event">
+          <div class="event-cal"><span class="day">26</span><span class="month">Nov</span></div>
+          <div class="event-body">
+            <div class="name">Lunch</div>
+            <div class="sub">Jammu</div>
+          </div>
+          <svg class="event-mark" viewBox="0 0 20 20" fill="none">
+            <circle cx="10" cy="10" r="4" stroke="#C9A85C" stroke-width="0.8"/>
+          </svg>
+        </div>
+        <div class="event">
+          <div class="event-cal"><span class="day">26</span><span class="month">Nov</span></div>
+          <div class="event-body">
+            <div class="name">Departure for Delhi</div>
+            <div class="sub">Evening</div>
+          </div>
+          <svg class="event-mark" viewBox="0 0 20 20" fill="none">
+            <circle cx="10" cy="10" r="4" stroke="#C9A85C" stroke-width="0.8"/>
+          </svg>
+        </div>
+
+        <div class="city-row">
+          <div class="line"></div>
+          <div class="city-label">Delhi</div>
+          <div class="line"></div>
+        </div>
+
+        <div class="event">
+          <div class="event-cal"><span class="day">29</span><span class="month">Nov</span></div>
+          <div class="event-body">
+            <div class="name">Shishur</div>
+            <div class="sub">Lunch · Delhi</div>
+          </div>
+          <svg class="event-mark" viewBox="0 0 20 20" fill="none">
+            <path d="M10 2 L12 8 L18 10 L12 12 L10 18 L8 12 L2 10 L8 8 Z" stroke="#C9A85C" stroke-width="0.8"/>
+          </svg>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="rsvp">
+    <div class="rsvp-frame">
+      <div class="eyebrow-tag">Kindly share your plans</div>
+      <h2>Your presence is the blessing</h2>
+      <p class="rsvp-note">If you're able to, share your travel details so we can arrange accommodation comfortably — or give us a call. We'd love to hear from you.</p>
+      <div class="cta-row">
+        <a class="cta cta-primary" href="#rsvp-form">
+          <svg class="cta-icon" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h10" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+          Share details
+        </a>
+        <a class="cta cta-secondary" href="tel:+919810136111">
+          <svg class="cta-icon" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" stroke="currentColor" stroke-width="1.5"/></svg>
+          Call Anil-ji
+        </a>
+        <a class="cta cta-secondary" href="tel:+919810226037">
+          <svg class="cta-icon" viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" stroke="currentColor" stroke-width="1.5"/></svg>
+          Call Renu-ji
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <svg class="footer-deco" viewBox="0 0 48 48" fill="none">
+      <path d="M24 4 L28 20 L44 24 L28 28 L24 44 L20 28 L4 24 L20 20 Z" stroke="#C9A85C" stroke-width="0.8"/>
+      <circle cx="24" cy="24" r="3" fill="#0F4C3A"/>
+    </svg>
+    <div class="footer-names">The Sapru family</div>
+    <div class="footer-mini">Aditya &amp; Himanshi · November 2026</div>
+  </footer>
+
+</div>
+</body>
+</html>
