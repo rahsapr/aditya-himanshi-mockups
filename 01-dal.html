@@ -484,7 +484,6 @@
 <button id="audio-toggle" aria-label="Toggle ambient music" type="button">
   <svg class="icon-muted"   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
   <svg class="icon-playing" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
-  <span class="audio-label">Play music</span>
 </button>
 <style>
   #audio-toggle {
@@ -492,39 +491,32 @@
     top: calc(20px + env(safe-area-inset-top));
     right: 16px;
     z-index: 60;
-    display: flex; align-items: center; gap: 6px;
-    min-height: 44px; padding: 9px 14px 9px 11px;
+    display: flex; align-items: center; justify-content: center;
+    width: 44px; height: 44px; padding: 0;
     border: 1px solid var(--gold, #D4A24C);
-    border-radius: 999px;
+    border-radius: 50%;
     background: rgba(0,0,0,0.55);
     backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
     color: var(--gold, #D4A24C);
-    font-family: 'Inter', 'Montserrat', 'Lato', sans-serif;
-    font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
     cursor: pointer; user-select: none;
-    transition: all 0.25s ease;
+    transition: transform 0.25s ease, background 0.25s ease;
     box-shadow: 0 4px 14px rgba(0,0,0,0.25);
   }
-  #audio-toggle:hover { transform: scale(1.03); }
-  #audio-toggle:active { transform: scale(0.97); }
-  #audio-toggle svg { width: 16px; height: 16px; flex-shrink: 0; }
+  #audio-toggle:hover { transform: scale(1.06); }
+  #audio-toggle:active { transform: scale(0.94); }
+  #audio-toggle svg { width: 18px; height: 18px; flex-shrink: 0; }
   #audio-toggle .icon-playing { display: none; }
   #audio-toggle.is-playing .icon-muted { display: none; }
   #audio-toggle.is-playing .icon-playing { display: block; }
-  #audio-toggle.is-playing .audio-label::before { content: 'Music on'; }
-  #audio-toggle.is-playing .audio-label { visibility: hidden; width: 0; padding: 0; margin: 0; font-size: 0; }
-  #audio-toggle.is-playing .audio-label::before { visibility: visible; font-size: 11px; }
-  #audio-toggle.is-playing { padding-right: 11px; }
   #audio-toggle.pulse { animation: audioPulse 2.8s ease-in-out 2; }
   @keyframes audioPulse {
     0%, 100% { box-shadow: 0 4px 14px rgba(0,0,0,0.25), 0 0 0 0 rgba(212,162,76,0); }
-    50%       { box-shadow: 0 4px 14px rgba(0,0,0,0.25), 0 0 0 10px rgba(212,162,76,0); }
-    25%       { box-shadow: 0 4px 14px rgba(0,0,0,0.25), 0 0 0 6px rgba(212,162,76,0.35); }
+    50%      { box-shadow: 0 4px 14px rgba(0,0,0,0.25), 0 0 0 10px rgba(212,162,76,0); }
+    25%      { box-shadow: 0 4px 14px rgba(0,0,0,0.25), 0 0 0 6px rgba(212,162,76,0.35); }
   }
   @media (prefers-reduced-motion: reduce) { #audio-toggle.pulse { animation: none; } }
-  /* Light variants: swap to dark text on light pill for contrast */
   body.audio-light-theme #audio-toggle {
-    background: rgba(255,255,255,0.82);
+    background: rgba(255,255,255,0.85);
     color: var(--saffron-deep, var(--chinar-deep, var(--dusty-rose-deep, var(--emerald-deep, #B35B15))));
     border-color: currentColor;
   }
